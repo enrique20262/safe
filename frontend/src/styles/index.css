@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos de scrollbar personalizados para interfaz móvil/moderna */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0D13;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B1F32;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A304D;
+}
+
+/* Asegurar que el canvas de Mapbox reciba eventos del trackpad */
+.mapboxgl-canvas-container {
+  touch-action: auto !important;
+}
+
+/* Efectos y clases del mapa y controles */
+.mapboxgl-ctrl-group {
+  background-color: #111420 !important;
+  border: 1px solid #1B1F32 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mapboxgl-ctrl-group button {
+  background-color: transparent !important;
+  border-bottom: 1px solid #1B1F32 !important;
+}
+
+.mapboxgl-ctrl-group button:last-child {
+  border-bottom: none !important;
+}
+
+.mapboxgl-ctrl-group button span {
+  filter: invert(1) !important;
+}
+
+/* Personalización de Popups de Mapbox */
+.mapboxgl-popup-content {
+  background: rgba(17, 20, 32, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  color: #F8FAFC !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  padding: 14px 16px !important;
+  font-family: 'Outfit', 'Inter', sans-serif !important;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: rgba(17, 20, 32, 0.95) !important;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: rgba(17, 20, 32, 0.95) !important;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: rgba(17, 20, 32, 0.95) !important;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: rgba(17, 20, 32, 0.95) !important;
+}
+
+.mapboxgl-popup-close-button {
+  color: #94A3B8 !important;
+  padding: 4px 8px !important;
+  font-size: 16px !important;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: transparent !important;
+  color: #F1F5F9 !important;
+}
+
+/* Efecto de ripple / onda expansiva para la ubicación y alertas de pánico */
+.ripple-effect {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: rgba(239, 68, 68, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: ripple-animation 2s infinite ease-out;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Transiciones fluidas */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism utility card */
+.glass-panel {
+  background: rgba(17, 20, 32, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
