@@ -275,7 +275,7 @@ export const SafeMap: React.FC<SafeMapProps> = ({
 
   // Loop de simulación de caminata a lo largo de los puntos de la ruta segura
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
 
     if (isSimulatingWalk) {
       interval = setInterval(() => {
